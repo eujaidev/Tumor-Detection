@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 # Load the trained model
-model = load_model('/home/redleaf/Documents/DUK/Deep Learning/CNN Tumor Detection/cnn_tumor.keras')
+model = load_model(r'/home/redleaf/Documents/DUK/Deep Learning/CNN Tumor Detection/cnn_tumor.keras')
 
 # Define the prediction function
 def make_prediction(img, model):
