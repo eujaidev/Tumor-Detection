@@ -9,5 +9,6 @@ Install the dependencies using:
 ```bash
 pip install -r requirements.txt 
 ```
-```To start the Streamlit app:
+To start the Streamlit app:
+```bash
 streamlit run app.py
