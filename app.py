@@ -1,83 +1,10 @@
-# import streamlit as st
-# from tensorflow.keras.models import load_model
-# from tensorflow.keras.preprocessing import image
-# import cv2
-# import numpy as np
-# from PIL import Image
-
-# model = load_model('/home/redleaf/Documents/DUK/Deep Learning/deep-learning/CNN/tumor_detection/results/model/cnn_tumor.keras')
-
-# def make_prediction(img,model):
-#     img=cv2.imread(img)
-#     img=Image.fromarray(img)
-#     img=img.resize((128,128))
-#     img=np.array(img)
-#     input_img = np.expand_dims(img, axis=0)
-#     res = model.predict(input_img)
-#     if res:
-#         print("Tumor Detected")
-#     else:
-#         print("No Tumor")
-#     return res
-
-# st.title("Tumor Classification")
-# st.write("Upload an image to classify if it has a tumor or not.")
-
-# uploaded_file = st.file_uploader("Choose an image...", type="jpg")
-
-# if uploaded_file is not None:
-#     img = Image.open(uploaded_file)
-#     st.image(img, caption="Uploaded Image.", use_column_width=True)
-    
-#     st.write("Classifying...")
-#     label = make_prediction(img,model)
-#     st.write(f"Prediction: Tumor - {label}")
-
-# ------------------------------------------------------------------------------------------------------------------------------------------
-# import streamlit as st
-# from tensorflow.keras.models import load_model
-# from tensorflow.keras.preprocessing import image
-# import numpy as np
-# from PIL import Image
-
-# # Load your model
-# model = load_model('/home/redleaf/Documents/DUK/Deep Learning/deep-learning/CNN/tumor_detection/results/model/cnn_tumor.keras')
-
-# # Define the prediction function
-# def make_prediction(img, model):
-#     img = img.resize((128, 128))  # Resize image to match model input size
-#     img = np.array(img)  # Convert to NumPy array
-#     img = np.expand_dims(img, axis=0)  # Add batch dimension
-#     img = img / 255.0  # Normalize pixel values
-#     res = model.predict(img)  # Make prediction
-#     return res[0][0]  # Return the first result
-
-# # Streamlit app
-# st.title("Tumor Classification")
-# st.write("Upload an image to classify if it has a tumor or not.")
-
-# # File uploader
-# uploaded_file = st.file_uploader("Choose an image...", type="jpg")
-
-# if uploaded_file is not None:
-#     img = Image.open(uploaded_file)  # Open the uploaded image
-#     st.image(img, caption="Uploaded Image.", use_column_width=True)
-    
-#     st.write("Classifying...")
-#     label = make_prediction(img, model)  # Predict tumor
-#     if label >= 0.5:
-#         st.write("Prediction: Tumor Detected")
-#     else:
-#         st.write("Prediction: No Tumor")
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 import streamlit as st
 from tensorflow.keras.models import load_model
 import numpy as np
 from PIL import Image
 
 # Load the trained model
-model = load_model('/home/redleaf/Documents/DUK/Deep Learning/deep-learning/CNN/tumor_detection/results/model/cnn_tumor.keras')
+model = load_model('/home/redleaf/Documents/DUK/Deep Learning/CNN Tumor Detection/cnn_tumor.keras')
 
 # Define the prediction function
 def make_prediction(img, model):
